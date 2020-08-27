@@ -1,0 +1,33 @@
+{
+  "name": "master-weaver",
+  "version": "1.0.0",
+  "description": "A social media for dungeon masters to share their campaigns",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcorum11/master-weaver.git"
+  },
+  "keywords": [
+    "dungeons",
+    "dragons",
+    "social",
+    "media",
+    "dnd",
+    "d&d"
+  ],
+  "author": "Jake Corum",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcorum11/master-weaver/issues"
+  },
+  "homepage": "https://github.com/jcorum11/master-weaver#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "mongoose": "^5.10.1"
+  }
+}
