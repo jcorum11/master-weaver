@@ -1,5 +1,4 @@
 const { User } = require("../models");
-const { findOneAndDelete } = require("../models/User");
 
 const userController = {
   // GET all users
