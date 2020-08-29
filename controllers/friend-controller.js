@@ -25,7 +25,7 @@ const friendController = {
       .then(({ _id }) => {
         return User.findOneAndUpdate(
           { _id: params.userId },
-          { $push: { friends: _id } },
+          { $pull: { friends: _id } },
           { new: true }
         );
       })
