@@ -29,6 +29,7 @@ router.route("/user/:userId").post(createThought);
 //   PUT to update a thought by its _id
 //   DELETE to remove a thought by its _id
 
-router.route("/:thoughtId/reactions").post(addReaction).delete(removeReaction);
+router.route("/:thoughtId/reactions").post(addReaction)
+router.route("/:thoughtId/reactions/:reactionId").delete(removeReaction);
 
 module.exports = router;
