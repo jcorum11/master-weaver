@@ -75,10 +75,10 @@ const thoughtController = {
   //-----------------------------------------------------------------
 
   // add reply to thought
-  addReply({ params, body }, res) {
+  addReaction({ params, body }, res) {
     Thought.findOneAndUpdate(
-      { _id: params.replyId },
-      { $push: { replies: body } },
+      { _id: params.thoughtId },
+      { $push: { reactions: body } },
       { new: true, runValidators: true }
     )
       .then((dbThoughtData) => {
@@ -91,19 +91,19 @@ const thoughtController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // DELETE to remove Reply by its _id
-  removeReply({ params }, res) {
+  // DELETE to remove Reaction by its _id
+  removeReaction({ params }, res) {
     Thought.findOneAndDelete(
       { _id: params.thoughtId },
       { new: true },
-      { $pull: { replies: { replyId: params.replyId } } }
+      { $pull: { reactions: { reactionId: params.reactionId } } }
     )
-      .then((dbReplyData) => {
-        if (!dbReplyData) {
-          res.status(404).json("No Reply found with this id!!!");
+      .then((dbReactionData) => {
+        if (!dbReactionData) {
+          res.status(404).json("No thought found with this id!!!");
           return;
         }
-        res.json(dbReplyData);
+        res.json(dbReactionData);
       })
       .catch((err) => res.status(400).json(err));
   },
